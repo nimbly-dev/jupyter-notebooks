@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  jupyter:
+    image: building-fast-queries-on-csv
+    build: .
+    ports:
+      - "8888:8888"
+    environment:
+      - DB_HOST=pgdatabase
+      - DB_PORT=5432
+      - DB_NAME=laptops
+      - DB_USER=laptops_admin
+      - DB_PASSWORD=laptops
+      - JDBC_DRIVER_PATH=/usr/local/share/postgresql/postgresql-42.7.3.jar
+    volumes:
+      - .:/home/nimbly-dev/work
+    command: ["start-notebook.sh", "--NotebookApp.token=''"]
+    networks:
+      - pg-network
+
+  pgdatabase:
+    image: postgres:16
+    container_name: local_pgdb
+    environment:
+      - POSTGRES_USER=laptops_admin 
+      - POSTGRES_PASSWORD=laptops 
+      - POSTGRES_DB=laptops 
+    volumes:
+      - "./.project-pgdata:/var/lib/postgresql/data:rw"
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "8080:80"
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+    entrypoint: >
+      sh -c "/entrypoint.sh"
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+
+volumes:
+  project-pgdata:
