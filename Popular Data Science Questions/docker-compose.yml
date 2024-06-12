@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  jupyter:
+    image: popular-data-science-questions-notebook
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/nimbly-dev/work
+    command: ["start-notebook.sh", "--NotebookApp.token=''"]
