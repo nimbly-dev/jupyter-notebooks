@@ -1,0 +1,14 @@
+{
+    "Servers": {
+      "local_pgdb": {
+        "Name": "Docker Server",
+        "Group": "Servers",
+        "Host": "pgdatabase",
+        "Port": 5432,
+        "MaintenanceDB": "postgres",
+        "Username": "laptops_admin",
+        "Password": "laptops",
+        "SSLMode": "prefer"
+      }
+    }
+}
