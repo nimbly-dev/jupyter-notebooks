@@ -1,5 +1,11 @@
-This repository is a compilation of all of my Jupyter notebook projects that I have created. Most of these are guided projects on [Dataquest]('dataquest.io/') but with my added flavour and customisation. For easier installation, each notebook project has its own *Dockerfile* so Docker will handle the installation of any required dependencies.
+# Jupyter Notebook Projects Repository
 
-| Project name | Link to orignal project | Description |
-| --------     | -------- | -------- |
-| Popular Data Science Questions | [View](https://app.dataquest.io/m/469/guided-project%3A-popular-data-science-questions/2/stack-exchange) | Using Data from StackExchange, we have extracted the data from posts and created insights on what Data Science topics are popular |
+Welcome to my Jupyter Notebook projects repository! This compilation showcases various projects, many of which are guided projects from [Dataquest](https://www.dataquest.io/) but with my unique twists and customizations. Each project comes with its own Dockerfile for seamless installation, thanks to Docker handling the setup of required dependencies.
+
+## Projects Overview
+
+| Project Name                      | Original Project Link                                                                   | Description                                                                                              |
+|----------------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| Popular Data Science Questions   | [View Project](https://app.dataquest.io/m/469/guided-project%3A-popular-data-science-questions/2/stack-exchange) | Analyzing StackExchange data to identify popular Data Science topics based on post insights. |
+
+Feel free to explore each project and don't hesitate to reach out if you have any questions or suggestions!
